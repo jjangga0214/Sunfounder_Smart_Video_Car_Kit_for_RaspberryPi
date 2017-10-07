@@ -156,7 +156,7 @@ class Motor:
         RIGHT = "RIGHT"
 
     def __init__(self, pwm: p.PWM, motor_type: str, cali_forward: bool):
-        self.speed *= 0
+        self.speed = 0
         self.pwm = pwm
         self.cali_forward = cali_forward
         self.dir = self.cali_forward
