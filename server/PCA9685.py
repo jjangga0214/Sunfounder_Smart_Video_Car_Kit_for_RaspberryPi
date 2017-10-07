@@ -123,7 +123,7 @@ class PWM(object):
         self._write_byte_data(self._MODE1, mode1)
         time.sleep(0.005)
         #self.frequency = 60
-        #self._frequency = 60
+        self._frequency = 60
         self.frequency(60)
 
     def _write_byte_data(self, reg, value):
