@@ -42,8 +42,7 @@ def setup(bus_num=None):
     else:
         pwm = p.PWM(bus_number=bus_num)  # Initialize the servo controller.
 
-    #pwm._frequency = 60
-    #pwm.frequency(60)
+    # pwm.frequency = 60
     forward0 = 'True'
     forward1 = 'True'
     GPIO.setwarnings(False)
@@ -219,9 +218,9 @@ class Motor:
 
 
 if __name__ == '__main__':
-    #setup()
-    #set_speed(50)
-    # forward()
-    # backward()
-    #stop()
+    setup()
+    set_speed(50)
+    forward()
+    backward()
+    stop()
     pass

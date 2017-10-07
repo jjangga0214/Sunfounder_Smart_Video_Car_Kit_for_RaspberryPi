@@ -15,7 +15,6 @@ class RCar:
             pwm = p.PWM(bus_number=self.config.bus_num)  # Initialize the servo controller.
 
         # pwm.frequency = 60
-        # pwm.frequency(60)
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BOARD)  # Number GPIOs by its physical location
 
