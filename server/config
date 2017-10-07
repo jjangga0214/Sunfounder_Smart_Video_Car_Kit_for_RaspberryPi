@@ -1,6 +1,6 @@
-offset_x = 11
-offset_y = 0
-offset = 0
+offset_x = -87
+offset_y = -285
+offset = 150
 forward0 = True
-forward1 = True
+forward1 = False
  
