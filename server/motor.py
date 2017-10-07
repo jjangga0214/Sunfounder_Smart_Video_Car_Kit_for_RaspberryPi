@@ -161,7 +161,7 @@ class Motor:
         self.pwm = pwm
         self.cali_forward = cali_forward
         self.dir = self.cali_forward
-        
+
         # ===========================================================================
         # Raspberry Pi pin11, 12, 13 and 15 to realize the clockwise/counterclockwise
         # rotation and forward and backward movements
@@ -224,3 +224,4 @@ if __name__ == '__main__':
     # forward()
     # backward()
     #stop()
+    pass
