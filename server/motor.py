@@ -42,7 +42,8 @@ def setup(bus_num=None):
     else:
         pwm = p.PWM(bus_number=bus_num)  # Initialize the servo controller.
 
-    pwm.frequency = 60
+    #pwm._frequency = 60
+    #pwm.frequency(60)
     forward0 = 'True'
     forward1 = 'True'
     GPIO.setwarnings(False)
@@ -160,7 +161,7 @@ class Motor:
         self.pwm = pwm
         self.cali_forward = cali_forward
         self.dir = self.cali_forward
-
+        
         # ===========================================================================
         # Raspberry Pi pin11, 12, 13 and 15 to realize the clockwise/counterclockwise
         # rotation and forward and backward movements
@@ -185,7 +186,7 @@ class Motor:
 
     # facade for outer call
     def set_speed(self, speed: int):
-        self.speed *= 40
+        self.speed = speed * 40
         print('speed is: ', speed)
         self.pwm.write(self.en, 0, speed)
 
@@ -218,8 +219,8 @@ class Motor:
 
 
 if __name__ == '__main__':
-    setup()
-    set_speed(50)
+    #setup()
+    #set_speed(50)
     # forward()
     # backward()
-    stop()
+    #stop()

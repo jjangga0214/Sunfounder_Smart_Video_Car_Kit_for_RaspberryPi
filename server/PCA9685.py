@@ -123,7 +123,8 @@ class PWM(object):
         self._write_byte_data(self._MODE1, mode1)
         time.sleep(0.005)
         #self.frequency = 60
-        self._frequency = 60
+        #self._frequency = 60
+        self.frequency(60)
 
     def _write_byte_data(self, reg, value):
         '''Write data to I2C with self.address'''
@@ -260,7 +261,7 @@ if __name__ == '__main__':
     import time
 
     pwm = PWM()
-    pwm.frequency = 60
+    pwm.frequency(60)
     for i in range(16):
         time.sleep(0.5)
         print('\nChannel %d\n' % i)
