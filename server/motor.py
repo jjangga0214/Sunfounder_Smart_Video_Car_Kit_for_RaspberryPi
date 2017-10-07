@@ -151,7 +151,7 @@ def test():
 
 
 class Motor:
-    class Type(Enum):
+    class Type(str, Enum):
         LEFT = "LEFT"
         RIGHT = "RIGHT"
 

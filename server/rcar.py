@@ -7,19 +7,19 @@ import time
 
 class RCar:
     def __init__(self):
-        self.dao = model.Configurer()
+        self.config = model.Configurer()
 
-        if self.dao.bus_num == None:
+        if self.config.bus_num == None:
             pwm = p.PWM()  # Initialize the servo controller.
         else:
-            pwm = p.PWM(bus_number=self.dao.bus_num)  # Initialize the servo controller.
+            pwm = p.PWM(bus_number=self.config.bus_num)  # Initialize the servo controller.
 
         pwm.frequency = 60
         GPIO.setwarnings(False)
         GPIO.setmode(GPIO.BOARD)  # Number GPIOs by its physical location
 
-        self.left_motor = motor.Motor(pwm, motor.Motor.Type.LEFT, self.dao.forward_0)
-        self.right_motor = motor.Motor(pwm, motor.Motor.Type.RIGHT, self.dao.forward_1)
+        self.left_motor = motor.Motor(pwm, motor.Motor.Type.LEFT, self.config.forward_0)
+        self.right_motor = motor.Motor(pwm, motor.Motor.Type.RIGHT, self.config.forward_1)
 
     def forward(self, speed: int):
         self.left_motor.forward(speed)
