@@ -193,17 +193,17 @@ class Motor:
     def forward(self, speed=False):
         speed = speed if type(speed) == int else self.speed
         self.set_speed(speed)
-        self.set_dir(self, self.cali_forward)
+        self.set_dir(self.cali_forward)
 
     # facade for outer call
     def backward(self, speed=False):
         speed = speed if type(speed) == int else self.speed
         self.set_speed(speed)
-        self.set_dir(self, not self.cali_forward)
+        self.set_dir(not self.cali_forward)
 
     # facade for outer call
     def reverse(self):
-        self.set_dir(self, not self.dir)
+        self.set_dir(not self.dir)
 
     # low level call for inner call
     def set_dir(self, dir: bool):
